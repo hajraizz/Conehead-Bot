@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "conebot",
-  description: "a dreamy conan gray-inspired chatbot",
+  description: "a fun conan gray-inspired chatbot",
 };
 
 export default function RootLayout({
