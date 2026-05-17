@@ -1,0 +1,45 @@
+@keyframes sticker-drift {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) rotate(var(--sticker-rotate-start))
+      scale(0.92);
+  }
+
+  18% {
+    opacity: var(--sticker-opacity);
+  }
+
+  50% {
+    transform: translate3d(var(--sticker-drift-x), -18px, 0)
+      rotate(var(--sticker-rotate-mid)) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(calc(var(--sticker-drift-x) * -0.35), -58px, 0)
+      rotate(var(--sticker-rotate-end)) scale(0.96);
+  }
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    filter: blur(0);
+    opacity: 0.62;
+  }
+
+  50% {
+    filter: blur(0.4px);
+    opacity: 0.9;
+  }
+}
+
+.sticker-float {
+  animation: sticker-drift var(--sticker-duration) ease-in-out infinite;
+  animation-delay: var(--sticker-delay);
+  opacity: 0;
+}
+
+.sticker-float-soft {
+  animation: soft-pulse 5.5s ease-in-out infinite;
+}
